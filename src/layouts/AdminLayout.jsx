@@ -29,6 +29,7 @@ function AdminLayout() {
                     setUser(res.data.user)
                 }
             } catch (error) {
+                localStorage.clear()
                 navigate("/")
                 setIsAuthenticated(false)
                 setUser(null)

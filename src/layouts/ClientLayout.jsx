@@ -28,6 +28,7 @@ function ClientLayout() {
                 setIsAuthenticated(true)
                 setUser(res.data.user)
             } catch (error) {
+                localStorage.clear()
                 setIsAuthenticated(false)
                 setUser(null)
                 console.error("Authentication check failed:", error);
