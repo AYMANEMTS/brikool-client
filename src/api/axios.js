@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosClient = axios.create({
-    baseURL: 'http://localhost:8000',
+    baseURL: 'https://brikool-server.vercel.app',
     headers: {
         'Content-Type': 'multipart/form-data',
     },
