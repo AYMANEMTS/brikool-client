@@ -73,7 +73,7 @@ function CategoriesSlider({ t }) {
                             className="bg-gray-300 dark:bg-gray-700 p-5 m-2 rounded-lg text-center shadow-md hover:shadow-lg transition"
                         >
                             <div className="mb-2 sm:mb-4">
-                                <img src={`https://brikool-client.vercel.app/${item.image}`} alt={item?.name?.[lng]} className="rounded-md" />
+                                <img src={`https://brikool-server-git-main-aymane-moutousses-projects.vercel.app/${item.image}`} alt={item?.name?.[lng]} className="rounded-md" />
                             </div>
                             <p className="text-teal-blue dark:text-bright-yellow font-semibold text-xs capitalize sm:text-sm">
                                 {item?.name?.[lng]}
