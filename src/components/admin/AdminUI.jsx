@@ -13,6 +13,7 @@ function AdminUi() {
     const logout = async () => {
         try {
             await AuthApi.logout()
+            localStorage.clear();
             window.location.href = '/'
         }catch (e) {
             console.log(e)

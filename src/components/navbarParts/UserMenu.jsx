@@ -26,6 +26,7 @@ export default function DemoUserMenu() {
         try {
             startLoading();
             await AuthApi.logout();
+            localStorage.clear();
             setIsAuthenticated(false);
             setUser(null);
             navigate("/");
