@@ -1,0 +1,16 @@
+{
+  "home": "Home",
+  "workers": "Workers",
+  "about": "About",
+  "createNewJob": "Create New Job",
+  "signIn": "Sign in",
+  "search": "Search...",
+  "dashboard": "Dashboard",
+  "announces": "Announces" ,
+  "chat": "Chat",
+  "settings": "Settings",
+  "support": "Support" ,
+  "logout": "Logout",
+  "nav_mobile_title": "Welcome to Besma",
+  "nav_mobile_text": "1er website for independent workers"
+}
