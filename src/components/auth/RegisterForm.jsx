@@ -24,6 +24,7 @@ function RegisterForm({ handllSwapForm,handleOpen, redirectRoute }) {
         setLoading(true)
         try {
             const res = await AuthApi.register(data);
+            localStorage.setItem("jwt",res.data.jwt)
             setIsAuthenticated(true)
             setUser(res.data.user)
             handleOpen()

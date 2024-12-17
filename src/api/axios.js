@@ -8,3 +8,10 @@ export const axiosClient = axios.create({
     withCredentials: true
 });
 
+axiosClient.interceptors.request.use((config) => {
+    const jwt = localStorage.getItem('jwt');
+    if (jwt) {
+        config.headers.Authorization = `Bearer ${jwt}`;
+    }
+    return config;
+});

@@ -29,10 +29,12 @@ function LoginForm({handllSwapForm,handleOpen,redirectRoute}) {
             formData.append('password',data.password)
             const res = await AuthApi.login(formData);
             if (res.status === 200) {
+                localStorage.setItem("jwt",res.data.jwt)
                 setIsAuthenticated(true)
                 setUser(res?.data?.user)
                 handleOpen();
                 if (res?.data?.user?.role === 'admin' || res?.data?.user?.role === 'moderator'){
+                    
                     navigate("/admin")
                     enqueueSnackbar(t("successMessage"),{variant: 'success'})
                     return;
