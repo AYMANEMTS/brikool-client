@@ -19,13 +19,13 @@ function ClientLayout() {
     const {pathname} = useLocation()
     const [requiredCity, setRequiredCity] = useState(false)
     const [verifyEmailModal, setVerifyEmailModal] = useState(false)
-    const {setUser, setIsAuthenticated,user} = useLoading()
+    const {setUser, setIsAuthenticated,isAuthenticated,user} = useLoading()
     const [searchParams] = useSearchParams()
     const jwt = searchParams.get("jwt")
 
 
     useEffect(() => {
-        if (jwt){
+        if (jwt || !isAuthenticated){
             localStorage.setItem('jwt', jwt)
         }
         const checkAuth = async () => {
