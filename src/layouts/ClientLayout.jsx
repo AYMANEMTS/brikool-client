@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Outlet, useLocation} from "react-router-dom";
+import {Outlet, useLocation, useSearchParams} from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollToTop from "../utils/ScrollToTop";
@@ -20,8 +20,14 @@ function ClientLayout() {
     const [requiredCity, setRequiredCity] = useState(false)
     const [verifyEmailModal, setVerifyEmailModal] = useState(false)
     const {setUser, setIsAuthenticated,user} = useLoading()
+    const [searchParams] = useSearchParams()
+    const jwt = searchParams.get("jwt")
+
 
     useEffect(() => {
+        if (jwt){
+            localStorage.setItem('jwt', jwt)
+        }
         const checkAuth = async () => {
             try {
                 const res = await AuthApi.checkAuth();
@@ -35,7 +41,7 @@ function ClientLayout() {
             }
         };
         checkAuth().catch(e => console.log(e))
-    }, [setIsAuthenticated, setUser]);
+    }, [setIsAuthenticated, setUser,jwt]);
 
     useEffect(() => {
         if (user) {
