@@ -33,7 +33,7 @@ function JobCard({job,calculateAverageRating}) {
                             className="w-10 h-10 object-cover rounded-full"
                         />
                         <Tooltip content={job.userId?.name} placement="top">
-                            <span onClick={() => window.open(`http://localhost:3000/worker/${job._id}`, "_blank")}
+                            <span onClick={() => window.open(`https://brikool-client.vercel.app/worker/${job._id}`, "_blank")}
                                 className="cursor-pointer font-medium text-gray-700 truncate max-w-[120px] block">
                                 {job?.userId?.name}
                             </span>
@@ -57,7 +57,7 @@ function JobCard({job,calculateAverageRating}) {
                                 </MenuItem>
                             )}
                             <MenuItem disabled={!isAuthorized(user,'delete_jobs')} onClick={() => setDeleteJobModal(true)}>Delete</MenuItem>
-                            <MenuItem onClick={() => window.open(`http://localhost:3000/worker/${job._id}`, '_blank')}>
+                            <MenuItem onClick={() => window.open(`https://brikool-client.vercel.app/worker/${job._id}`, '_blank')}>
                                 View
                             </MenuItem>
                         </MenuList>

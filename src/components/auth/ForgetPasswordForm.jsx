@@ -13,7 +13,7 @@ function ForgetPasswordForm() {
         try {
             const res = await AuthApi.forgetPassword({ email: data.email });
             if (res.data.redirect) {
-                window.location.href = `http://localhost:8000/${res.data.url}`;
+                window.location.href = `https://brikool-server.vercel.app/${res.data.url}`;
             } else if (res.data.success) {
                 setSuccessMessage("A reset password link has been sent to your email.");
                 reset()

@@ -12,7 +12,7 @@ function CategoryForm({selectedCategory,handleOpen,isUpdate}) {
         }});
     const { enqueueSnackbar } = useSnackbar();
     const [imagePreview, setImagePreview] = useState(selectedCategory.image ?
-        `http://localhost:8000/${selectedCategory.image}` : null);
+        `https://brikool-server.vercel.app//${selectedCategory.image}` : null);
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         if (file) {

@@ -5,7 +5,7 @@ import io from 'socket.io-client';
 import formatDate from "../../utils/formatDate"; // Your utility for formatting dates
 import {Input,Avatar,Button} from "@material-tailwind/react"
 import {CornerUpLeft} from 'lucide-react'
-const socket = io('http://localhost:8000'); // Replace with your server's URL
+const socket = io('https://brikool-server.vercel.app/'); // Replace with your server's URL
 
 
 function ChatWindow({ chat, onBack, user, otherParticipant }) {
