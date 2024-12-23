@@ -2,6 +2,7 @@ import React from 'react';
 import Carousel from "react-multi-carousel";
 import WorkerCard from "../WorkerCard";
 import {useClientContext} from "../../../context/ClientProvider";
+import {Link} from "react-router-dom";
 
 export default function Workers({t}) {
     const {workers} = useClientContext()
@@ -12,7 +13,9 @@ export default function Workers({t}) {
                     <h1 className="text-2xl font-semibold text-center text-gray-700 dark:text-bright-yellow">{t('popularWorkers')}</h1>
                 </div>
                 <div>
-                    <a href="#" className="text-teal-blue dark:text-bright-yellow font-semibold hover:underline hover:text-bright-yellow dark:hover:text-teal-blue">{t('showMore')}</a>
+                    <Link to={"/workers"} className="text-teal-blue dark:text-bright-yellow font-semibold hover:underline hover:text-bright-yellow dark:hover:text-teal-blue">
+                        {t('showMore')}
+                    </Link>
                 </div>
             </div>
 

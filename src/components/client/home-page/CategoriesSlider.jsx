@@ -3,11 +3,14 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useTranslation } from 'react-i18next';
 import { useClientContext } from '../../../context/ClientProvider';
+import {Link, useNavigate} from "react-router-dom";
 
 function CategoriesSlider({ t }) {
     const { categories } = useClientContext();
     const { i18n } = useTranslation();
     const { language: lng } = i18n;
+    const navigate = useNavigate();
+
     return (
         <>
             <div className="flex justify-between items-center">
@@ -15,9 +18,9 @@ function CategoriesSlider({ t }) {
                     <h1 className="text-2xl font-semibold mb-6 text-center text-gray-700 dark:text-bright-yellow">{t('whatAreYouLookingFor')}</h1>
                 </div>
                 <div>
-                    <a href="#" className="text-teal-blue dark:text-bright-yellow font-semibold hover:underline hover:text-bright-yelliw dark:hover:text-teal-blue">
+                    <Link to={'/workers'} className="text-teal-blue dark:text-bright-yellow font-semibold hover:underline hover:text-bright-yelliw dark:hover:text-teal-blue">
                         {t('seeMore')}
-                    </a>
+                    </Link>
                 </div>
             </div>
 
@@ -72,7 +75,7 @@ function CategoriesSlider({ t }) {
                             key={key}
                             className="bg-gray-300 dark:bg-gray-700 p-5 m-2 rounded-lg text-center shadow-md hover:shadow-lg transition"
                         >
-                            <div className="mb-2 sm:mb-4">
+                            <div className="mb-2 sm:mb-4" onClick={() => navigate(`/workers?cat_id=${item._id}`)}>
                                 <img src={`https://brikool-server-git-main-aymane-moutousses-projects.vercel.app/${item.image}`} alt={item?.name?.[lng]} className="rounded-md" />
                             </div>
                             <p className="text-teal-blue dark:text-bright-yellow font-semibold text-xs capitalize sm:text-sm">
