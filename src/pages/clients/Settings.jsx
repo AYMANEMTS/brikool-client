@@ -1,14 +1,20 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Typography} from "@material-tailwind/react";
 import UpdateInformationForm from "../../components/settings/UpdateInformationForm";
 import PasswordUpdateForm from "../../components/settings/PasswordUpdateForm";
 import {useLoading} from "../../context/LoadingProvider";
 import AccountStatus from "../../components/settings/AccountStatus";
+import {useNavigate} from "react-router-dom";
 
 function Settings() {
-    const {user} = useLoading()
+    const {user, isAuthenticated} = useLoading()
+    const navigate = useNavigate();
     const isVerified = user && user.status === "verified";
-
+    useEffect(() => {
+        if (!isAuthenticated) {
+            navigate("/");
+        }
+    }, [isAuthenticated, navigate]);
     return (
         <div className="w-full bg-gray-200 dark:bg-gray-800 rounded-md shadow-md p-8 mt-20 md:mt-0">
 

@@ -3,18 +3,18 @@ import { Button, Typography } from '@material-tailwind/react';
 import JobCard from "../../components/client/JobCard";
 import JobModal from "../../components/client/jobs/JobModal";
 import { useLoading } from "../../context/LoadingProvider";
-import { useSearchParams } from "react-router-dom";
+import {useNavigate, useSearchParams} from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useClientContext } from "../../context/ClientProvider";
 
 function Announces() {
-    const { user } = useLoading();
+    const { user, isAuthenticated } = useLoading();
     const [modalOpen, setModalOpen] = useState(false);
     const { userJobs } = useClientContext();
     const [searchParams] = useSearchParams();
     const handleOpen = () => setModalOpen(!modalOpen);
     const showForm = searchParams.get("showForm");
-
+    const navigate = useNavigate();
     useEffect(() => {
         if (showForm) {
             setModalOpen(true);
@@ -22,6 +22,12 @@ function Announces() {
     }, [showForm]);
 
     const { t } = useTranslation('announces');
+
+    useEffect(() => {
+        if (!isAuthenticated) {
+            navigate("/");
+        }
+    }, [isAuthenticated, navigate]);
 
     return (
         <>
