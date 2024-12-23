@@ -17,7 +17,7 @@ export default function MobileDrawer({ open, toggleDrawer }) {
                     <Typography variant={"h4"}>{t('nav_mobile_title')}</Typography>
                     <Typography variant={"small"} className={"font-semibold"}>{t('nav_mobile_text')}</Typography>
 
-                    <Button  variant={"outlined"} size={"sm"} color={"blue"}
+                    <Button
                     onClick={() => {
                         toggleDrawer()
                         navigate("/announces?showForm=true")
