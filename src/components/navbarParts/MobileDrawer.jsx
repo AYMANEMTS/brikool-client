@@ -31,17 +31,17 @@ export default function MobileDrawer({ open, toggleDrawer }) {
                 <List >
                     <ListItem>
                         <Link to="/" onClick={toggleDrawer}>
-                            <Button >{t('home')}</Button>
+                            {t('home')}
                         </Link>
                     </ListItem>
                     <ListItem>
                         <Link to="/workers" onClick={toggleDrawer}>
-                            <Button>{t('workers')}</Button>
+                            {t('workers')}
                         </Link>
                     </ListItem>
                     <ListItem>
                         <Link to="/about-us" onClick={toggleDrawer}>
-                            <Button>{t('about')}</Button>
+                            {t('about')}
                         </Link>
                     </ListItem>
                 </List>
