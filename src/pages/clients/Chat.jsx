@@ -6,7 +6,7 @@ import {useLoading} from "../../context/LoadingProvider";
 
 
 
-function Chat() {
+function Chat2() {
     const [isChatListVisible, setIsChatListVisible] = useState(true);
     const {state} = useLocation()
     const chat = state?.chat
@@ -57,5 +57,8 @@ function Chat() {
     );
 }
 
+function Chat(){
+    return null
+}
 export default Chat;
 
