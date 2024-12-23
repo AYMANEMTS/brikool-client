@@ -44,12 +44,6 @@ function ClientLayout() {
             } else {
                 setRequiredCity(false);
             }
-
-            // if (user.status === "unverified") {
-            //     setVerifyEmailModal(true);
-            // } else {
-            //     setVerifyEmailModal(false);
-            // }
         } else {
             setVerifyEmailModal(false);
             setRequiredCity(false);
