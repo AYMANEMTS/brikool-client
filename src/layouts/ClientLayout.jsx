@@ -20,7 +20,7 @@ function ClientLayout() {
     const [requiredCity, setRequiredCity] = useState(false)
     const [verifyEmailModal, setVerifyEmailModal] = useState(false)
     const {setUser, setIsAuthenticated,isAuthenticated,user} = useLoading()
-    const [searchParams] = useSearchParams()
+    const [searchParams,setSearchParams] = useSearchParams()
     const jwt = searchParams.get("jwt")
 
 
@@ -33,6 +33,7 @@ function ClientLayout() {
                 const res = await AuthApi.checkAuth();
                 setIsAuthenticated(true)
                 setUser(res.data.user)
+                setSearchParams({})
             } catch (error) {
                 localStorage.clear()
                 setIsAuthenticated(false)
