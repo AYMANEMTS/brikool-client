@@ -25,15 +25,15 @@ function ClientLayout() {
 
 
     useEffect(() => {
-        if (jwt || !isAuthenticated){
+        if (jwt){
             localStorage.setItem('jwt', jwt)
+            setSearchParams({})
         }
         const checkAuth = async () => {
             try {
                 const res = await AuthApi.checkAuth();
                 setIsAuthenticated(true)
                 setUser(res.data.user)
-                setSearchParams({})
             } catch (error) {
                 localStorage.clear()
                 setIsAuthenticated(false)
@@ -42,7 +42,7 @@ function ClientLayout() {
             }
         };
         checkAuth().catch(e => console.log(e))
-    }, [setIsAuthenticated, setUser,jwt]);
+    }, [setIsAuthenticated, setUser, jwt, setSearchParams]);
 
     useEffect(() => {
         if (user) {
