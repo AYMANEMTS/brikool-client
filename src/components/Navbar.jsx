@@ -164,7 +164,7 @@ export default function Navbar() {
                         <IconButton onClick={toggleMobileDrawer}>
                             <Menu className={"w-6 h-6 text-xl dark:text-white"}/>
 
-                            
+
                         </IconButton>
                     </div>
                 </div>
