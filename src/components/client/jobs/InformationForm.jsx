@@ -8,7 +8,7 @@ function InformationForm({ control, user, errors, job, t, lng }) {
     const {categories} = useClientContext()
     return (
         <>
-            <h2 className="mb-4 font-bold text-gray-800 pl-2 flex justify-center">{t('information')}</h2>
+            <h2 className="mb-4 font-bold text-gray-900  dark:text-white pl-2 flex justify-center">{t('information')}</h2>
             <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Image Preview */}
                 <div className="flex justify-center items-center">

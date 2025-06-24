@@ -12,7 +12,7 @@
         content: '';
     }
     .nav-link::after {
-        @apply absolute bottom-0 left-0 w-full h-[3px] bg-[#008080] dark:bg-[#FFD700] scale-x-0 origin-left transition-transform duration-300;
+        @apply absolute bottom-0 left-0 w-full h-[3px] bg-[#008080] dark:bg-[#008080] scale-x-0 origin-left transition-transform duration-300;
         content: '';
     }
 
@@ -25,7 +25,7 @@
     }
 
     .active {
-        @apply text-[#FFD700] font-bold;
+        @apply text-[#008080] font-bold;
     }
 
     .active::after {

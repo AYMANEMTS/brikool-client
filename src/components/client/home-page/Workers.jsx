@@ -10,10 +10,10 @@ export default function Workers({t}) {
         <div className="h-full">
             <div className="flex justify-between items-center ">
                 <div>
-                    <h1 className="text-2xl font-semibold text-center text-gray-700 dark:text-bright-yellow">{t('popularWorkers')}</h1>
+                    <h1 className="text-2xl font-semibold text-center text-gray-700 dark:text-white">{t('popularWorkers')}</h1>
                 </div>
                 <div>
-                    <Link to={"/workers"} className="text-teal-blue dark:text-bright-yellow font-semibold hover:underline hover:text-bright-yellow dark:hover:text-teal-blue">
+                    <Link to={"/workers"} className="text-teal-blue dark:text-white font-semibold hover:underline hover:text-teal-blue dark:hover:text-teal-blue">
                         {t('showMore')}
                     </Link>
                 </div>

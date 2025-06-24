@@ -15,10 +15,10 @@ function CategoriesSlider({ t }) {
         <>
             <div className="flex justify-between items-center">
                 <div>
-                    <h1 className="text-2xl font-semibold mb-6 text-center text-gray-700 dark:text-bright-yellow">{t('whatAreYouLookingFor')}</h1>
+                    <h1 className="text-2xl font-semibold mb-6 text-center text-gray-700 dark:dark:text-white">{t('whatAreYouLookingFor')}</h1>
                 </div>
                 <div>
-                    <Link to={'/workers'} className="text-teal-blue dark:text-bright-yellow font-semibold hover:underline hover:text-bright-yelliw dark:hover:text-teal-blue">
+                    <Link to={'/workers'} className="text-teal-blue dark:dark:text-white font-semibold hover:underline hover:text-bright-yelliw dark:hover:text-teal-blue">
                         {t('seeMore')}
                     </Link>
                 </div>
@@ -73,12 +73,12 @@ function CategoriesSlider({ t }) {
                     ?.map((item, key) => (
                         <div
                             key={key}
-                            className="bg-gray-300 dark:bg-gray-700 p-5 m-2 rounded-lg text-center shadow-md hover:shadow-lg transition"
+                            className="bg-gray-300  p-5 m-2 rounded-lg text-center shadow-md hover:shadow-lg transition"
                         >
                             <div className="mb-2 sm:mb-4 cursor-pointer" onClick={() => navigate(`/workers?cat_id=${item._id}`)}>
                                 <img src={`https://brikool-server-git-main-aymane-moutousses-projects.vercel.app/${item.image}`} alt={item?.name?.[lng]} className="rounded-md" />
                             </div>
-                            <p className="text-teal-blue dark:text-bright-yellow font-semibold text-xs capitalize sm:text-sm">
+                            <p className="text-teal-blue e font-semibold text-xs capitalize sm:text-sm">
                                 {item?.name?.[lng]}
                             </p>
                         </div>

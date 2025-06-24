@@ -55,13 +55,13 @@ export default function DemoUserMenu() {
                     {t("announces")}
                 </MenuItem>
 
-                <MenuItem
-                    onClick={() => navigate("/chat")}
-                    className="hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2 p-2"
-                >
-                    <MessageCircleMore className={"h-6 w-6"} />
-                    {t("chat")}
-                </MenuItem>
+                {/*<MenuItem*/}
+                {/*    onClick={() => navigate("/chat")}*/}
+                {/*    className="hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2 p-2"*/}
+                {/*>*/}
+                {/*    <MessageCircleMore className={"h-6 w-6"} />*/}
+                {/*    {t("chat")}*/}
+                {/*</MenuItem>*/}
 
                 <MenuItem
                     onClick={() => navigate("/settings")}

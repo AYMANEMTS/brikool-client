@@ -41,7 +41,7 @@ export default function Navbar() {
     return (
         <>
             <header
-                className={`fixed top-0 left-0 right-0 border-b-2 border-teal-blue bg-white dark:bg-gray-900 font-sans min-h-[60px] px-2 md:px-10 py-3 z-50 transition-colors duration-300  dark:border-bright-yellow`}>
+                className={`fixed top-0 left-0 right-0 border-b-2 border-teal-blue bg-white dark:bg-[#111111] font-sans min-h-[60px] px-2 md:px-10 py-3 z-50 transition-colors duration-300  `}>
                 <div className="flex flex-wrap items-center max-lg:gap-y-6 max-sm:gap-x-1 justify-between w-full">
                     {/* Logo */}
                     <a href="/">
@@ -67,8 +67,8 @@ export default function Navbar() {
                                 <Link
                                     to="/"
                                     className={`${
-                                        pathname === "/" ? "active text-teal-blue dark:text-yellow-400" : "text-gray-700 dark:text-gray-300"
-                                    } nav-link p-1 hover:text-teal-blue dark:hover:text-yellow-400 font-medium`}
+                                        pathname === "/" ? "active text-teal-blue dark:text-teal-blue" : "text-gray-700 dark:text-gray-300"
+                                    } nav-link p-1 hover:text-teal-blue dark:hover:text-teal-blue font-medium`}
                                 >
                                     {t("home")}
                                 </Link>
@@ -77,8 +77,8 @@ export default function Navbar() {
                                 <Link
                                     to="/workers"
                                     className={`${
-                                        pathname === "/workers" ? "active text-teal-blue dark:text-yellow-400" : "text-gray-700 dark:text-gray-300"
-                                    } nav-link p-1 hover:text-teal-blue dark:hover:text-yellow-400 font-medium`}
+                                        pathname === "/workers" ? "active text-teal-blue dark:text-teal-blue" : "text-gray-700 dark:text-gray-300"
+                                    } nav-link p-1 hover:text-teal-blue dark:hover:text-teal-blue font-medium`}
                                 >
                                     {t("workers")}
                                 </Link>
@@ -87,8 +87,8 @@ export default function Navbar() {
                                 <Link
                                     to="/about-us"
                                     className={`${
-                                        pathname === "/about-us" ? "active text-teal-blue dark:text-yellow-400" : "text-gray-700 dark:text-gray-300"
-                                    } nav-link p-1 hover:text-teal-blue dark:hover:text-yellow-400 font-medium`}
+                                        pathname === "/about-us" ? "active text-teal-blue dark:text-teal-blue" : "text-gray-700 dark:text-gray-300"
+                                    } nav-link p-1 hover:text-teal-blue dark:hover:text-teal-blue font-medium`}
                                 >
                                     {t("about")}
                                 </Link>
@@ -162,7 +162,7 @@ export default function Navbar() {
                     </div>
                     <div className={"lg:hidden mx-1 "}>
                         <IconButton onClick={toggleMobileDrawer}>
-                            <Menu className={"w-6 h-6 text-xl dark:text-black"}/>
+                            <Menu className={"w-6 h-6 text-xl dark:text-white"}/>
                         </IconButton>
                     </div>
                 </div>

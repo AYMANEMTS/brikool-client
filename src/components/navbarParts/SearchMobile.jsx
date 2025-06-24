@@ -50,10 +50,10 @@ function SearchMobile() {
                     type="text"
                     placeholder={t('search')}
                     value={searchTerm}
-                    className="w-full px-1 py-1 pl-10 border border-gray-300 dark:border-bright-yellow rounded-lg focus:outline-none focus:ring text-teal-blue placeholder:text-teal-blue font-semibold placeholder:dark:text-bright-yellow dark:text-bright-yellow dark:bg-gray-800"
+                    className="w-full px-1 py-1 pl-10 border border-gray-300 dark:border-white rounded-lg focus:outline-none focus:ring text-teal-blue placeholder:text-teal-blue font-semibold placeholder:dark:text-white dark:text-white dark:bg-gray-800"
                 />
 
-                <SearchIcon className="absolute inset-y-1 left-2 flex items-center text-teal-blue dark:text-bright-yellow"/>
+                <SearchIcon className="absolute inset-y-1 left-2 flex items-center text-teal-blue dark:text-white"/>
             </div>
             {(userResults.length > 0 || categoryResults.length > 0) && (
                 <div
@@ -61,13 +61,13 @@ function SearchMobile() {
                     {/* Section for Workers */}
                     {userResults.length > 0 && (
                         <>
-                            <h3 className="px-4 py-2 text-lg font-bold text-teal-blue dark:text-bright-yellow">
+                            <h3 className="px-4 py-2 text-lg font-bold text-teal-blue dark:text-white">
                                 Workers
                             </h3>
                             {userResults.map((result, key) => (
                                 <span
                                     key={`user-${key}`}
-                                    className="block px-4 py-2 text-teal-blue dark:text-bright-yellow hover:bg-teal-blue dark:hover:bg-bright-yellow hover:text-white dark:hover:text-black cursor-pointer transition-colors duration-300"
+                                    className="block px-4 py-2 text-teal-blue dark:text-white hover:bg-teal-blue dark:hover:bg-white hover:text-white dark:hover:text-black cursor-pointer transition-colors duration-300"
                                     onClick={() => searchAction('user_id', result.userId._id)}
                                 >
               {result.userId.name}
@@ -78,13 +78,13 @@ function SearchMobile() {
                     {/* Section for Categories */}
                     {categoryResults.length > 0 && (
                         <>
-                            <h3 className="px-4 py-2 text-lg font-bold text-teal-blue dark:text-bright-yellow mt-2">
+                            <h3 className="px-4 py-2 text-lg font-bold text-teal-blue dark:text-white mt-2">
                                 Categories
                             </h3>
                             {categoryResults.map((result, key) => (
                                 <span
                                     key={`category-${key}`}
-                                    className="block px-4 py-2 text-teal-blue dark:text-bright-yellow hover:bg-teal-blue dark:hover:bg-bright-yellow cursor-pointer transition-colors duration-300"
+                                    className="block px-4 py-2 text-teal-blue dark:text-white hover:bg-teal-blue dark:hover:bg-white cursor-pointer transition-colors duration-300"
                                     onClick={() => searchAction('cat_id', result?._id)}
                                 >
               {result?.name?.[lng]}

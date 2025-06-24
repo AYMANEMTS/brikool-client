@@ -1,27 +1,27 @@
 const defaultStyle = {
     select: {
         defaultProps: {
-            className: "text-teal-blue dark:text-bright-yellow font-semibold !border-teal-blue focus:!border-teal-blue dark:!border-bright-yellow dark:focus:!border-bright-yellow",
+            className: "text-teal-blue dark:text-white font-semibold !border-teal-blue focus:!border-teal-blue dark:!border-white dark:focus:!border-white",
             labelProps: {
-                className: "!text-teal-blue dark:!text-bright-yellow",
+                className: "!text-teal-blue dark:!text-white",
             },
             variant: "standard",
         },
     },
     input: {
         defaultProps: {
-            className: "text-teal-blue dark:text-bright-yellow font-semibold !border-teal-blue focus:!border-teal-blue dark:!border-bright-yellow dark:focus:!border-bright-yellow",
+            className: "text-teal-blue dark:text-white font-semibold !border-teal-blue focus:!border-teal-blue dark:!border-white dark:focus:!border-white disabled:bg-transparent !disabled:!border-b-white",
             labelProps: {
-                className: "!text-teal-blue dark:!text-bright-yellow",
+                className: "!text-teal-blue dark:!text-white",
             },
             variant: "standard",
         },
     },
     textarea: {
         defaultProps: {
-            className: "text-teal-blue dark:text-bright-yellow font-semibold !border-teal-blue focus:!border-teal-blue dark:!border-bright-yellow dark:focus:!border-bright-yellow",
+            className: "text-teal-blue dark:text-white font-semibold !border-teal-blue focus:!border-teal-blue dark:!border-white dark:focus:!border-white",
             labelProps: {
-                className: "!text-teal-blue dark:!text-bright-yellow",
+                className: "!text-teal-blue dark:!text-white",
             },
             variant: "standard",
         },

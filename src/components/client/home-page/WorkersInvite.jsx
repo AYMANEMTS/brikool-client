@@ -1,9 +1,9 @@
 import React from 'react';
 import {useTranslation} from "react-i18next";
 function WorkersInvite() {
-    const {t} = useTranslation('workersInvite')
+    const {t, i18n} = useTranslation('workersInvite')
     return (
-        <section className="bg-white dark:bg-gray-900">
+        <section dir={i18n.dir()} className="bg-white dark:bg-[#111111]">
             <div className="container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
                 <div className="flex justify-center xl:w-1/2">
                     <img className="h-80 w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full"
@@ -12,7 +12,7 @@ function WorkersInvite() {
                 </div>
 
                 <div className="flex flex-col items-center mt-6 xl:items-start xl:w-1/2 xl:mt-0">
-                    <h2 className="text-2xl font-semibold tracking-tight text-teal-blue xl:text-3xl dark:text-bright-yellow">
+                    <h2 className="text-2xl font-semibold tracking-tight text-teal-blue xl:text-3xl dark:text-white">
                         {t('mobileInviteTitle')}
                     </h2>
 

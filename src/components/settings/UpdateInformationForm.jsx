@@ -82,7 +82,7 @@ const UpdateInformationForm = () => {
 
     return (
         <>
-            <Typography variant={"lead"} className={"text-dark-teal-blue dark:text-bright-yellow mt-4"}>Information</Typography>
+            <Typography variant={"lead"} className={"text-dark-teal-blue dark:text-white mt-4"}>Information</Typography>
             <div className={"grid grid-cols-1 md:grid-cols-2 gap-4 mt-2"}>
                 <div className={"flex flex-row items-center justify-center"}>
                     <label className="cursor-pointer">

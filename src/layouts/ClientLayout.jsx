@@ -58,7 +58,7 @@ function ClientLayout() {
 
     }, [user, pathname]);
 
-    
+
     const {setWorkers,setCategories,setUserJobs} = useClientContext()
 
     const { isFetching: isFetchingCategory, isError: isErrorCategory } = useQuery('categories', ClientApi.getCategories, {
@@ -100,7 +100,7 @@ function ClientLayout() {
 
     return (
         <>
-            <div className={`flex flex-col min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 `}>
+            <div className={`flex flex-col min-h-screen bg-white dark:bg-[#111111] text-gray-900 dark:text-gray-100 transition-colors duration-300 `}>
                 <ScrollToTop />
 
                 {/* Navbar */}

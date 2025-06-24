@@ -11,6 +11,7 @@ function Announces() {
     const { user, isAuthenticated } = useLoading();
     const [modalOpen, setModalOpen] = useState(false);
     const { userJobs } = useClientContext();
+    const [jobs, setJobs] = useState([])
     const [searchParams] = useSearchParams();
     const handleOpen = () => setModalOpen(!modalOpen);
     const showForm = searchParams.get("showForm");
@@ -28,6 +29,11 @@ function Announces() {
             navigate("/");
         }
     }, [isAuthenticated, navigate]);
+    useEffect(() => {
+        if (userJobs){
+            setJobs(userJobs);
+        }
+    }, [userJobs]);
 
     return (
         <>

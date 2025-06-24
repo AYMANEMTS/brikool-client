@@ -45,7 +45,7 @@ const PasswordUpdateForm = () => {
 
     return (
         <>
-            <Typography variant={"lead"} className={"text-dark-teal-blue dark:text-bright-yellow mt-4"}>Password</Typography>
+            <Typography variant={"lead"} className={"text-dark-teal-blue dark:text-white mt-4"}>Password</Typography>
             {errorMessage !== null && (
                 <Alert color="red" className={"text-md font-semibold mt-2"}>
                     {errorMessage}
