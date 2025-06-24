@@ -163,6 +163,8 @@ export default function Navbar() {
                     <div className={"lg:hidden mx-1 "}>
                         <IconButton onClick={toggleMobileDrawer}>
                             <Menu className={"w-6 h-6 text-xl dark:text-white"}/>
+
+                            
                         </IconButton>
                     </div>
                 </div>
