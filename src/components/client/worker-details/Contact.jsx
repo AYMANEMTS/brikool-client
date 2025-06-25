@@ -67,10 +67,6 @@ function Contact({job}) {
     return (
         <>
             <div className="flex space-x-2">
-                <IconButton onClick={chatAction} className={"rounded-full hover:bg-teal-700 hover:text-white"} size={"lg"}>
-                    <MessageCircleMore className={"w-7 h-7 "}/>
-                </IconButton>
-
                 {/* phone */}
                 {job?.contacts?.appel !== "" && (
                     <IconButton onClick={handleModal} className={"rounded-full hover:bg-teal-700 hover:text-white"} size={"lg"}>
