@@ -161,7 +161,7 @@ const FAQContact = () => {
                 {i18n.language === "en" && (
                     <div className="p-8 h-fit bg-gray-200 dark:bg-gray-800 rounded-lg shadow-md">
                         <h2 className="text-xl font-semibold mb-4 text-teal-blue dark:text-white">
-                            Didn't find your answer in the FAQ? Contact our sales
+                            Didn't find your answer in the FAQ? Contact us
                         </h2>
                         <form className="space-y-4" id={"FAQ"}>
                             {/* Name Input */}
@@ -188,7 +188,7 @@ const FAQContact = () => {
                 {i18n.language === "fr" && (
                     <div className="p-8 h-fit bg-gray-200 dark:bg-gray-800 rounded-lg shadow-md">
                         <h2 className="text-xl font-semibold mb-4 text-teal-blue dark:text-white">
-                            Vous n’avez pas trouvé votre réponse dans la FAQ ? Contactez notre équipe commerciale
+                            Vous n’avez pas trouvé votre réponse dans la FAQ ? Contactez nous
                         </h2>
                         <form className="space-y-4" id={"FAQ"}>
                             {/* Name Input */}
@@ -215,7 +215,7 @@ const FAQContact = () => {
                 {i18n.language === "ar" && (
                     <div className="p-8 h-fit bg-gray-200 dark:bg-gray-800 rounded-lg shadow-md">
                         <h2 className="text-xl font-semibold mb-4 text-teal-blue dark:text-white">
-                            لم تجد إجابتك في قسم الأسئلة المتكررة؟ تواصل مع فريق المبيعات
+                            لم تجد إجابتك في قسم الأسئلة الشائعة؟ تواصل معنا
                         </h2>
                         <form className="space-y-4" id={"FAQ"}>
                             {/* Name Input */}
