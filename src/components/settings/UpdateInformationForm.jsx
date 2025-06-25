@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Controller, useForm } from "react-hook-form";
 import citiesInMorocco from "../../utils/citiesInMorocco";
 import ClientApi from "../../api/ClientApi";
-import displayImage from "../../utils/imageFromServer";
+import displayImage, {defaultImageUrl} from "../../utils/imageFromServer";
 import { useSnackbar } from "notistack";
 import {Loader, Pencil} from "lucide-react";
 import { useLoading } from "../../context/LoadingProvider";
 import { useQueryClient } from "react-query";
 import { useTranslation } from "react-i18next";
 import {Input, Button, Select, Option, Typography, Badge, Avatar} from "@material-tailwind/react";
+import {axiosClient} from "../../api/axios";
 
 const UpdateInformationForm = () => {
     const { t, i18n } = useTranslation('announces');
@@ -27,15 +28,12 @@ const UpdateInformationForm = () => {
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
-        setValue('image', file);
         if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setPreview(reader.result);
-            };
-            reader.readAsDataURL(file);
+            setValue('image', file);
+            setPreview(URL.createObjectURL(file)); // preview working now
         }
     };
+
 
     const handleCityChange = (value) => {
         setSelectedCity(value);
@@ -46,10 +44,23 @@ const UpdateInformationForm = () => {
     const handleUpdateInformation = async (data) => {
         try {
             setLoading(true);
-            data.city = citiesInMorocco.filter(city => city?.[lng] === data.city)[0];
-            const res = await ClientApi.updateClient(data);
+
+            const formData = new FormData();
+            formData.append('name', data.name);
+
+            const cityObj = citiesInMorocco.find(city => city?.[lng] === data.city);
+            formData.append('city', JSON.stringify(cityObj)); // Send as stringified JSON
+
+            if (data.image instanceof File) {
+                formData.append('image', data.image);
+            }
+
+            const res = await axiosClient.put(`/clients`, formData, {
+                headers: { 'Content-Type': 'multipart/form-data' },
+            });
+
             if (res.status === 200) {
-                setUser(res?.data);
+                setUser(res.data);
                 reset();
                 enqueueSnackbar(tSetting('success_update_info'), { variant: "success" });
                 await queryClient.invalidateQueries('jobs');
@@ -88,7 +99,7 @@ const UpdateInformationForm = () => {
                     <label className="cursor-pointer">
                         <Badge placement="top-end" overlap="circular" color="teal" withBorder data-to-toggle={"tooltip"} title={"Change profile image"}
                                className="hover:bg-dark-teal-blue" content={<Pencil className="w-4 h-4"/>}>
-                            <Avatar src={displayImage(preview, user)} size="xxl" withBorder color="teal"/>
+                            <Avatar src={preview || user?.image || defaultImageUrl} size="xxl" withBorder color="teal" />
                         </Badge>
                         <input type="file" accept="image/*" className="hidden"
                                onChange={(e) => handleImageChange(e)}/>

@@ -76,7 +76,7 @@ function CategoriesSlider({ t }) {
                             className="bg-gray-300  p-5 m-2 rounded-lg text-center shadow-md hover:shadow-lg transition"
                         >
                             <div className="mb-2 sm:mb-4 cursor-pointer" onClick={() => navigate(`/workers?cat_id=${item._id}`)}>
-                                <img src={`https://brikool-server-git-main-aymane-moutousses-projects.vercel.app/${item.image}`} alt={item?.name?.[lng]} className="rounded-md" />
+                                <img src={item.image } alt={item?.name?.[lng]} className="rounded-md" />
                             </div>
                             <p className="text-teal-blue e font-semibold text-xs capitalize sm:text-sm">
                                 {item?.name?.[lng]}

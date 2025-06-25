@@ -14,3 +14,6 @@ const displayImage = (preview, user) => {
 };
 
 export default displayImage;
+
+
+export const defaultImageUrl = "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y";

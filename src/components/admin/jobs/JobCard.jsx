@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import displayImage from "../../../utils/imageFromServer";
+import displayImage, {defaultImageUrl} from "../../../utils/imageFromServer";
 import { Menu, MenuHandler, MenuList, MenuItem, Chip, Tooltip, IconButton } from "@material-tailwind/react";
 import formatDate from "../../../utils/formatDate";
 import ChangeStatusModal from "./ChangeStatusModal";
@@ -28,7 +28,7 @@ function JobCard({job,calculateAverageRating}) {
                 <div className="flex items-center justify-between gap-4 mb-2">
                     <div className="flex items-center space-x-2">
                         <img
-                            src={displayImage('', job?.userId)}
+                            src={job?.userId?.image || defaultImageUrl}
                             alt={job?.userId?.name}
                             className="w-10 h-10 object-cover rounded-full"
                         />

@@ -7,7 +7,7 @@ import formatDate from "../../utils/formatDate";
 import Comments from "../../components/client/worker-details/Comments";
 import RatingComponent from "../../components/client/worker-details/RatingComponent";
 import {useQuery} from "react-query";
-import displayImage from "../../utils/imageFromServer";
+import displayImage, {defaultImageUrl} from "../../utils/imageFromServer";
 import {useLoading} from "../../context/LoadingProvider";
 import {useTranslation} from "react-i18next";
 import {MapPin, Clock8, ChartBarStacked} from 'lucide-react'
@@ -39,7 +39,7 @@ function WorkerDetails() {
                     className="flex flex-col md:flex-row items-center justify-between bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg dark:shadow-gray-700">
                     <div className="w-full md:w-1/3 mb-6 md:mb-0">
                         <img
-                            src={displayImage("", job?.userId)}
+                            src={job?.userId?.image || defaultImageUrl}
                             alt="Worker Image"
                             className="w-80 h-80 object-cover rounded-lg"
                         />

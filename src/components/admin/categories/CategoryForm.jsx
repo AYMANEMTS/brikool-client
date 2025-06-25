@@ -4,6 +4,7 @@ import {Button,Input} from "@material-tailwind/react";
 import AdminApi from "../../../api/AdminApi";
 import {useSnackbar} from "notistack";
 import {useQueryClient} from "react-query";
+import {axiosClient} from "../../../api/axios";
 
 function CategoryForm({selectedCategory,handleOpen,isUpdate}) {
     const {register,handleSubmit,setValue,formState:{isValid,errors}} = useForm({mode:"onChange",defaultValues: {
@@ -23,22 +24,35 @@ function CategoryForm({selectedCategory,handleOpen,isUpdate}) {
     const queryClient = useQueryClient()
     const saveCategory = async (data) => {
         try {
-            if (isUpdate) {
-                await AdminApi.updateCategory(selectedCategory._id, data)
-                await queryClient.invalidateQueries('categories')
-                handleOpen()
-                enqueueSnackbar("Category Updated!", {variant: "success"})
-            }else {
-                await AdminApi.createCategory(data)
-                await queryClient.invalidateQueries('categories')
-                handleOpen()
-                enqueueSnackbar("Category created!", {variant: "success"})
+            const formData = new FormData();
+
+            formData.append('name[en]', data.name.en);
+            formData.append('name[fr]', data.name.fr);
+            formData.append('name[ar]', data.name.ar);
+
+            if (data.image instanceof File) {
+                formData.append('image', data.image);
             }
-        }catch (e) {
-            enqueueSnackbar("Failed to create category",{variant:"error"})
-            console.log(e)
+
+            if (isUpdate) {
+                await axiosClient.put(`/categories/${selectedCategory._id}`, formData, {
+                    headers: { 'Content-Type': 'multipart/form-data' }
+                });
+                enqueueSnackbar("Category Updated!", { variant: "success" });
+            } else {
+                await axiosClient.post(`/categories`, formData, {
+                    headers: { 'Content-Type': 'multipart/form-data' }
+                });
+                enqueueSnackbar("Category created!", { variant: "success" });
+            }
+
+            await queryClient.invalidateQueries('categories');
+            handleOpen();
+        } catch (e) {
+            enqueueSnackbar("Failed to save category", { variant: "error" });
+            console.error(e);
         }
-    }
+    };
     return (
         <>
             {/* Multilingual Category Name */}

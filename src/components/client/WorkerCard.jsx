@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import displayImage from "../../utils/imageFromServer";
+import displayImage, {defaultImageUrl} from "../../utils/imageFromServer";
 import formatDate from "../../utils/formatDate";
 import { useTranslation } from "react-i18next";
 import { MapPin, Clock8, MessageCircle } from "lucide-react";
@@ -14,7 +14,7 @@ export default function WorkerCard({ job }) {
         <div className="flex flex-col max-w-md w-full h-full mx-auto bg-gray-200 dark:bg-gray-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
             {/* Profile Section */}
             <div className="flex flex-col items-center">
-                <Avatar size={"xxl"} src={displayImage("", job?.userId)} className={"border-2  cursor-pointer border-teal-blue "}
+                <Avatar size={"xxl"} src={job?.userId?.image || defaultImageUrl} className={"border-2  cursor-pointer border-teal-blue "}
                 onClick={() => navigate(`/worker/${job._id}`)}/>
                 <h2
                     className="text-xl font-bold text-teal-blue dark:text-white mt-3 hover:underline cursor-pointer"

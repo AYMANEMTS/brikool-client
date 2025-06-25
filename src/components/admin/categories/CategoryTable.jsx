@@ -1,5 +1,5 @@
 import React from 'react';
-import displayImage from "../../../utils/imageFromServer";
+import displayImage, {defaultImageUrl} from "../../../utils/imageFromServer";
 import {useAdminContext} from "../../../context/AdminProvider";
 import {Link} from "react-router-dom";
 import {useLoading} from "../../../context/LoadingProvider";
@@ -41,7 +41,7 @@ function CategoryTable({categories,openModal,setDeleteModal,setSelectedCategory}
                             return (
                                 <tr key={category?._id} className="hover:bg-gray-50">
                                     <td className={classes}>
-                                        <Avatar src={displayImage("", category)}/>
+                                        <Avatar src={category?.image || defaultImageUrl}/>
                                     </td>
                                     <td className={classes}>
                                         <Typography

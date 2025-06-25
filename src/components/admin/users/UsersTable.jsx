@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Avatar, Card, Typography} from "@material-tailwind/react";
-import displayImage from "../../../utils/imageFromServer";
+import displayImage, {defaultImageUrl} from "../../../utils/imageFromServer";
 import ActionButton from './ActionButton';
 import PermissionsModal from "./permissions/PermissionsModal";
 import DetailsModal from "./details/DetailsModal";
@@ -61,7 +61,7 @@ function UsersTable({ users }) {
                             <tr key={user?._id} className="hover:bg-gray-50">
                                 <td className={classes}>
                                     <div className={"flex items-center space-x-2"}>
-                                        <Avatar src={displayImage("", user)}/>
+                                        <Avatar src={user?.image || defaultImageUrl}/>
                                         <Typography
                                             variant="small"
                                             color="blue-gray"
