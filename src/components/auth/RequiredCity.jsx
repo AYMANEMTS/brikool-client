@@ -25,6 +25,8 @@ function RequiredCity({ open, handleOpen }) {
         try {
             const {city} = data
             const res = await ClientApi.updateClient({ city, name: user.name });
+            console.log(res);
+            
             if (res.status === 200 && res.data) {
                 setUser(res.data);
                 handleOpen();
