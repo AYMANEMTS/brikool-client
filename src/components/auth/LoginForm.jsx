@@ -34,7 +34,7 @@ function LoginForm({handllSwapForm,handleOpen,redirectRoute}) {
                 setUser(res?.data?.user)
                 handleOpen();
                 if (res?.data?.user?.role === 'admin' || res?.data?.user?.role === 'moderator'){
-                    
+
                     navigate("/admin")
                     enqueueSnackbar(t("successMessage"),{variant: 'success'})
                     return;
@@ -69,9 +69,9 @@ function LoginForm({handllSwapForm,handleOpen,redirectRoute}) {
         return <ForgetPasswordForm />
     }
     return (
-        <Card className="w-full  p-4 md:p-8">
+        <Card className="w-full  p-4 md:p-8 dark:bg-[#111111] rounded-2xl">
             <CardBody>
-                <Typography variant="h4" className="text-center mb-8">
+                <Typography variant="h4" className="text-center mb-8 dark:text-white">
                     {t('loginTitle')}
                 </Typography>
 

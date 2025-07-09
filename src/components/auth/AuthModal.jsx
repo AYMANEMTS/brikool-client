@@ -15,9 +15,9 @@ function AuthModal({ open, handleOpen, redirectRoute="/settings" ,swapState}) {
             size="sm"
             open={open}
             handler={() => handleOpen()}
-            className="bg-transparent shadow-none"
+            className="bg-transparent shadow-none  "
         >
-            <Card className="mx-auto w-full ">
+            <Card className="mx-auto w-full dark:bg-[#111111] rounded-2xl ">
                 {swapForm
                     ? <RegisterForm handllSwapForm={handllSwapForm} handleOpen={handleOpen} redirectRoute={redirectRoute} />
                     : <LoginForm handleOpen={handleOpen} handllSwapForm={handllSwapForm} redirectRoute={redirectRoute} />

@@ -57,7 +57,7 @@ function JobCard({job,calculateAverageRating}) {
                                 </MenuItem>
                             )}
                             <MenuItem disabled={!isAuthorized(user,'delete_jobs')} onClick={() => setDeleteJobModal(true)}>Delete</MenuItem>
-                            <MenuItem onClick={() => window.open(`https://brikool-client.vercel.app/worker/${job._id}`, '_blank')}>
+                            <MenuItem onClick={() => window.open(`https://brikool-client-lilac.vercel.app/worker/${job._id}`, '_blank')}>
                                 View
                             </MenuItem>
                         </MenuList>

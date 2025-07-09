@@ -13,6 +13,7 @@ import Spinner from "../utils/Spinner";
 import ServerNotRespond from "../utils/ServerNotRespond";
 import AuthApi from "../api/AuthApi";
 import VerifyEmail from "../components/auth/VerifyEmail";
+import {enqueueSnackbar} from "notistack";
 
 
 function ClientLayout() {
@@ -23,6 +24,16 @@ function ClientLayout() {
     const [searchParams,setSearchParams] = useSearchParams()
     const jwt = searchParams.get("jwt")
 
+    const [params] = useSearchParams();
+
+    useEffect(() => {
+        const error = params.get('error');
+        if (error === 'email_exists') {
+            enqueueSnackbar("This email is already registered. Please log in using your password.",{variant:"error"})
+        } else if (error === 'auth_failed') {
+            enqueueSnackbar("Google authentication failed. Please try again.",{variant:"error"})
+        }
+    }, [params]);
 
     useEffect(() => {
         if (jwt){

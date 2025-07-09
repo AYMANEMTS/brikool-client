@@ -31,6 +31,7 @@ function RegisterForm({ handllSwapForm,handleOpen, redirectRoute }) {
             navigate(redirectRoute)
             enqueueSnackbar(t('successMessage'),{variant:"success"})
         } catch (error) {
+            console.log(error)
             if (!error.response) {
                 // Network or server is down
                 setMessage('Server is currently unavailable. Please try again later.');
@@ -54,9 +55,9 @@ function RegisterForm({ handllSwapForm,handleOpen, redirectRoute }) {
     };
 
     return (
-        <Card className={"w-full"}>
+        <Card className={"w-full dark:bg-[#111111] rounded-2xl"}>
             <CardBody>
-                <Typography variant="h5" className={"text-center mb-4"}>
+                <Typography variant="h5" className={"text-center mb-4 dark:text-white"}>
                     {t('createAccount')}
                 </Typography>
                 {message !== null && (
@@ -158,7 +159,7 @@ function RegisterForm({ handllSwapForm,handleOpen, redirectRoute }) {
                     </Button>
                 </form>
                 <div className="flex justify-center mt-4">
-                    <span onClick={handllSwapForm} className="text-blue-500 cursor-pointer hover:underline">
+                    <span onClick={handllSwapForm} className="dark:text-white cursor-pointer hover:underline">
                         {t('alreadyHaveAccount')}
                     </span>
                 </div>
