@@ -1,6 +1,6 @@
 const displayImage = (preview, user) => {
     const defaultImageUrl = "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y";
-    const backendBaseUrl =  "https://brikool-server.vercel.app/";
+    const backendBaseUrl =  "https://brikool-server-2.vercel.app/";
 
     return preview
         ? preview
