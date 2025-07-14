@@ -37,8 +37,7 @@ const UpdateInformationForm = () => {
 
     const handleCityChange = (value) => {
         setSelectedCity(value);
-        const cityObject = citiesInMorocco.filter(city => city?.[lng] === value);
-        setValue('city', cityObject);
+        setValue('city', value); // store city string (e.g., "Casablanca")
     };
 
     const handleUpdateInformation = async (data) => {
@@ -49,7 +48,9 @@ const UpdateInformationForm = () => {
             formData.append('name', data.name);
 
             const cityObj = citiesInMorocco.find(city => city?.[lng] === data.city);
-            formData.append('city', JSON.stringify(cityObj)); // Send as stringified JSON
+            if (cityObj) {
+                formData.append('city', JSON.stringify(cityObj));
+            }
 
             if (data.image instanceof File) {
                 formData.append('image', data.image);
