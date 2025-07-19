@@ -33,19 +33,19 @@ export default function Footer() {
             </div>
             {i18n.language === "en" && (
                 <p className="text-center text-gray-700 font-medium">
-                    &copy; 2022 Brikool. All rights reserved.
+                    &copy; 2025 Brikool. All rights reserved.
                 </p>
             )}
 
             {i18n.language === "fr" && (
                 <p className="text-center text-gray-700 font-medium">
-                    &copy; 2022 Brikool. Tous droits réservés.
+                    &copy; 2025 Brikool. Tous droits réservés.
                 </p>
             )}
 
             {i18n.language === "ar" && (
                 <p className="text-center text-gray-700 font-medium" dir="rtl">
-                    &copy; 2022 بريكول. جميع الحقوق محفوظة.
+                    &copy; 2025 بريكول. جميع الحقوق محفوظة.
                 </p>
             )}
         </footer>
